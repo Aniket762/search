@@ -1,5 +1,14 @@
 # search
 
+<img width="1600" height="1000" alt="embeddings data" src="https://github.com/user-attachments/assets/d43e94d0-ae8b-4d95-9e8f-41b6cf4cf746" />
+
+<img width="1440" height="772" alt="product data with sku pk" src="https://github.com/user-attachments/assets/817406c4-9d95-4bdb-bb56-3e376d485ecc" />
+
+<img width="1440" height="772" alt="Swagger UI with all endpoints" src="https://github.com/user-attachments/assets/ef67066a-91f2-47c0-86f7-9f2bf334f55c" />
+
+<img width="1440" height="772" alt="Post call response" src="https://github.com/user-attachments/assets/a4288702-d51b-4842-a320-feb601fab89b" />
+
+
 
 ## Setup Guide
 
