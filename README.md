@@ -8,6 +8,7 @@ The service separates deterministic search from LLM-powered search:
 - **Deterministic search** handles filtering, pagination, and exact matches (no regex)
 - **LLM** is used to understand the user's intent and convert natural language to JSON
 - **Semantic search** is used as a fallback when an SQL query returns 5 or fewer products
+- **Logging** stores query and network round-trip time
 
 ## DB Design
 
@@ -51,6 +52,10 @@ The LLM is only responsible for processing queries and extracting filters. Gemin
 <img width="1440" height="772" alt="Swagger UI with all endpoints" src="https://github.com/user-attachments/assets/ef67066a-91f2-47c0-86f7-9f2bf334f55c" />
 
 <img width="1440" height="772" alt="Post call response" src="https://github.com/user-attachments/assets/a4288702-d51b-4842-a320-feb601fab89b" />
+
+<img width="1440" height="655" alt="Logging Network RTT + Query in pgsql" src="https://github.com/user-attachments/assets/ace4262e-ddb3-4d8a-b7d6-5d84445198f4" />
+
+
 
 ## Setup Guide 🦾
 
