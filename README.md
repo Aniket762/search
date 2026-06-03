@@ -1,4 +1,42 @@
-# search
+# search 🔎 🔥
+
+A loosely coupled deterministic and semantic search service built using Express, PostgreSQL, Prisma and Pgvector. 
+
+The goal was to support both traditional filter-based search and natural language search without relying on an LLM for every part of the search process.
+
+The service separated deterministic search from LLM search:
+- Deterministic search handles filtering, pagination, and exact matches (no regex)
+- LLM is used to understand the user's intent and convert natural language to JSON
+- Semantic search is used as a fallback when an SQL query returns fewer than or equal to 5 products.
+
+## DB Design
+Product: Stores the product catalog and searchable metadata for field refer to   `prisma/schema.prisma`
+
+Embeddings: Product embeddings are stored in pgsql using pgvector. Embeddings are generated from 
+```
+name
+category
+subcategory
+description
+searchKeywords
+```
+## LLM Model
+Model Used: Gemini 2.5 Flash
+LLM only requires processing queries and filter extraction.
+
+Gemini 2.5 Flash provides good instruction following at a very low cost. The model is fast enough for search workloads. Using a better LLM model would increase both the cost and latency. 
+
+One API call per user search, no calls during filtering, ranking, pagination, or semantic retrieval. 
+
+Approximate Tokens Per Call
+Input: 500-700
+Output: 20-60 
+Total: 600-750
+
+Estimated cost for 1,000 Searches Per Day: $0.0075 
+
+For higher accuracy, Gemini 2.5 Pro or Claude Sonnet could be used. 
+
 
 <img width="1600" height="1000" alt="embeddings data" src="https://github.com/user-attachments/assets/d43e94d0-ae8b-4d95-9e8f-41b6cf4cf746" />
 
