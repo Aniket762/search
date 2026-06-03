@@ -1,8 +1,48 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Product {
+  skuId String @id
+  productId String 
+  
+  name String
+
+  category String?
+  subcategory String?
+  brand String?
+
+  priceInr Float
+
+  rating Float?
+  reviewCount Int?
+
+  inventoryCount Int?
+  availability String?
+
+  isActive Boolean?
+  catalogStatus String?
+
+  color String?
+  material String?
+  room String?
+  style String?
+
+  unit String?
+
+  description String?
+
+  attributesJson Json?
+
+  searchKeywords String?
+
+  createdAt DateTime
+
+ 
+
+  @@index([productId])
 }
