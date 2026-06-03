@@ -92,6 +92,7 @@ export async function pareseNaturalLanguageQuery(query:string):Promise<ParsedSea
         4. Return ONLY valid JSON.
         5. confidence must be between 0 and 1.
         6. searchText should contain the remaining semantic intent not captured by filters.
+        7. Return ONLY raw JSON. Do not wrap in markdown code blocks.
 
         Examples:
 
@@ -165,8 +166,12 @@ export async function pareseNaturalLanguageQuery(query:string):Promise<ParsedSea
         }
     );
 
-    const content =
-        response.data.choices[0].message.content;
+    const content = response.data.choices[0].message.content;
 
-    return JSON.parse(content);
+    const cleaned = content
+    .trim()
+    .replace(/^```(?:json)?\s*/i, "")
+    .replace(/\s*```$/, "");
+
+    return JSON.parse(cleaned);
 }
