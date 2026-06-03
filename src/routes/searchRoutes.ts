@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {searchProductsLLM, searchProducts} from "../controllers/searchController";
 import { hybridProductSearch } from "../controllers/hybridSearchController";
+import { searchLogger } from "../middleware/searchLogger";
 const router = Router();
 
 /**
@@ -34,7 +35,7 @@ const router = Router();
  *       500:
  *         description: Failed to search products
  */
-router.post("/", searchProducts);
+router.post("/", searchLogger, searchProducts);
 
 /**
  * @swagger
@@ -60,7 +61,7 @@ router.post("/", searchProducts);
  *       500:
  *         description: Internal server error
  */
-router.post("/ai",searchProductsLLM);
+router.post("/ai",searchLogger,searchProductsLLM);
 
 /**
  * @swagger
@@ -83,6 +84,6 @@ router.post("/ai",searchProductsLLM);
  *       200:
  *         description: Hybrid search results
  */
-router.post("/hybrid",hybridProductSearch);
+router.post("/hybrid",searchLogger, hybridProductSearch);
 
 export default router;

@@ -1,7 +1,8 @@
 import fs from "fs";
+import "dotenv/config";
 import csv from "csv-parser";
 import {prisma} from "../src/prisma/prismaClient";
-import "dotenv/config";
+
 
 const products:any[] = [];
 let skippedCount = 0;

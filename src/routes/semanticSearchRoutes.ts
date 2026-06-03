@@ -1,5 +1,6 @@
 import {Router} from "express";
 import {semanticProductSearch} from "../controllers/semanticSearchController";
+import { searchLogger } from "../middleware/searchLogger";
 
 const router = Router();
 
@@ -24,6 +25,6 @@ const router = Router();
  *       200:
  *         description: Semantic search results
  */
-router.post("/semantic",semanticProductSearch);
+router.post("/semantic", searchLogger, semanticProductSearch);
 
 export default router;

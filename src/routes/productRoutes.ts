@@ -1,5 +1,6 @@
 import {Router} from "express";
 import {fetchProducts,fetchProductBySku} from "../controllers/productController";
+import { searchLogger } from "../middleware/searchLogger";
 
 const router = Router();
 
@@ -27,7 +28,7 @@ const router = Router();
  *       200:
  *         description: Product list returned successfully
  */
-router.get("/",fetchProducts);
+router.get("/", searchLogger ,fetchProducts);
 
 /**
  * @swagger
@@ -49,6 +50,6 @@ router.get("/",fetchProducts);
  *       404:
  *         description: Product not found
  */
-router.get("/:skuId",fetchProductBySku);
+router.get("/:skuId",searchLogger,fetchProductBySku);
 
 export default router;

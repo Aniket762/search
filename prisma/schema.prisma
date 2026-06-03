@@ -41,6 +41,15 @@ model Product {
   searchKeywords String?
 
   createdAt DateTime
-  
+
   @@index([productId])
+}
+
+model SearchLog {
+    id             Int      @id @default(autoincrement())
+    query          String
+    responseTimeMs Int
+    statusCode     Int
+    resultCount    Int?
+    createdAt      DateTime @default(now())
 }
