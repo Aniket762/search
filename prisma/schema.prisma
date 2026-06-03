@@ -41,8 +41,6 @@ model Product {
   searchKeywords String?
 
   createdAt DateTime
-
- 
-
+  
   @@index([productId])
 }
