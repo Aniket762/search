@@ -1,0 +1,21 @@
+query_id,natural_language_query,expected_category,expected_subcategory,expected_color_or_brand,expected_min_price,expected_max_price,expected_room
+Q001,budget curtain fabric under 500 for bedroom,Fabric,Curtain Fabric,,0,500,Bedroom
+Q002,modern grey sofa for living room,Sofa,,Grey,,,Living Room
+Q003,wooden dining table for six people,Dining Table,Dining Table 6 Seater,,,,Dining Room
+Q004,blackout blinds for privacy,Blinds,Readymade Blinds,,,,
+Q005,affordable wallpaper for bedroom accent wall,All Wallpaper,Wallpaper,,0,1500,Bedroom
+Q006,premium mattress with good comfort rating,All Mattress,Mattress,,3000,,
+Q007,entrance mat that does not slip,Mats,,,,,
+Q008,gold home decor artifact for living room,Accessories,Artifacts,Gold,,,Living Room
+Q009,curtain hardware rod finials,Hardware,,,,,
+Q010,kids room bedsheet in pink,Linen,Bedsheet,Pink,,,Kids Room
+Q011,office chair for long sitting,Accent Chair,,,,,Office
+Q012,products from brand FFPL under 10000,,,FFPL,0,10000,
+Q013,available blue curtain fabric with high rating,Fabric,Curtain Fabric,Blue,,,
+Q014,non current products below 1000,,,,0,1000,
+Q015,natural wooden blinds for balcony,Blinds,Readymade Blinds,Natural,,,Balcony
+Q016,cheap cushions and soft furnishing material,Fabric,,,0,800,
+Q017,luxury dining chair with good reviews,Dining Chair,Dining Chair,,,,Dining Room
+Q018,water resistant outdoor furniture,Outdoors,,,,,Balcony
+Q019,brown bed furniture under 25000,Bed,Bed,Brown,0,25000,Bedroom
+Q020,show me in stock products only,,,,,,

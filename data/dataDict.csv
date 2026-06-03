@@ -1,0 +1,23 @@
+Column,Description
+product_id,Base product identifier from the source catalog. Multiple SKUs may share one product_id.
+sku_id,Unique SKU/variant identifier.
+name,Readable product name.
+category,High-level product category.
+subcategory,More specific product grouping.
+brand,Brand/vendor code from the source catalog.
+price_inr,Retail price used for filtering and sorting in the assignment.
+rating,Synthetic rating added for search/ranking use cases.
+review_count,Synthetic review count added for ranking use cases.
+inventory_count,Synthetic stock count for availability filtering.
+availability,"Derived availability: in_stock, low_stock, or out_of_stock."
+is_active,Whether product is active in catalog.
+catalog_status,Current/non-current status from source catalog.
+color,Synthetic/inferred color for filter and natural-language search testing.
+material,Synthetic/inferred material attribute.
+room,Synthetic intended room/use-case.
+style,Synthetic interior style label.
+unit,Unit of measure from source catalog.
+description,Generated product description for keyword/semantic search.
+attributes_json,JSON object with selected attributes.
+search_keywords,Expanded keywords/synonyms to support simple search implementations.
+created_at,Original creation date if available.
